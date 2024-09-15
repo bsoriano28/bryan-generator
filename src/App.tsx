@@ -1,11 +1,16 @@
+// App.tsx
 import React from 'react';
-import './index.css'; // Ensure Tailwind or custom styles are applied
-import ParkingPass from './ParkingPass'; // Import the ParkingPass form
+import './index.css';
+import ParkingPass from './ParkingPass';
+import Header from './Header';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <ParkingPass /> {/* Render the ParkingPass form component */}
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      <Header />
+      <main className="flex items-center justify-center flex-grow p-6">
+        <ParkingPass />
+      </main>
     </div>
   );
 };

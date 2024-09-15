@@ -17,7 +17,7 @@ export const template = {
                 "fontSize": 25,
                 "lineHeight": 1,
                 "characterSpacing": 0,
-                "fontColor": "#b3b3b3", // Use fontColor instead of color
+                "fontColor": "#b3b3b3",
                 "backgroundColor": "",
                 "opacity": 1,
                 "rotate": 0,
@@ -36,7 +36,7 @@ export const template = {
                 "fontSize": 25,
                 "lineHeight": 1,
                 "characterSpacing": 0,
-                "fontColor": "#b3b3b3", // Hexadecimal value for gray
+                "fontColor": "#b3b3b3", 
                 "backgroundColor": "",
                 "opacity": 1,
                 "rotate": 0,
@@ -53,7 +53,7 @@ export const template = {
                 "fontSize": 11,
                 "lineHeight": 1,
                 "characterSpacing": 0,
-                "fontColor" : "#454545", // Use fontColor instead of color
+                "fontColor" : "#454545",
                 "backgroundColor": "",
                 "opacity": 1,
                 "rotate": 0,
@@ -71,7 +71,7 @@ export const template = {
                 "fontSize": 11,
                 "lineHeight": 1,
                 "characterSpacing": 0,
-                "fontColor" : "#454545", // Use fontColor instead of color
+                "fontColor" : "#454545", 
                 "backgroundColor": "",
                 "opacity": 1,
                 "rotate": 0,
@@ -89,7 +89,7 @@ export const template = {
                 "fontSize": 11,
                 "lineHeight": 1,
                 "characterSpacing": 0,
-                "fontColor" : "#454545", // Use fontColor instead of color
+                "fontColor" : "#454545", 
                 "backgroundColor": "",
                 "opacity": 1,
                 "rotate": 0,
@@ -107,7 +107,7 @@ export const template = {
                 "fontSize": 11,
                 "lineHeight": 1,
                 "characterSpacing": 0,
-                "fontColor" : "#454545", // Use fontColor instead of color
+                "fontColor" : "#454545", 
                 "backgroundColor": "",
                 "opacity": 1,
                 "rotate": 0,
