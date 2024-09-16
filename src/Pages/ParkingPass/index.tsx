@@ -1,10 +1,11 @@
-// ParkingPass.tsx
+// src/pages/ParkingPass/index.tsx
 import React, { useState } from 'react';
 import { format, addDays } from 'date-fns';
 import { generate } from '@pdfme/generator';
 import { template } from './source';
 
 const ParkingPass: React.FC = () => {
+  // State variables
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [expirationDate, setExpirationDate] = useState('');
@@ -14,13 +15,11 @@ const ParkingPass: React.FC = () => {
   const [vehicleModel, setVehicleModel] = useState('');
   const [vehicleColor, setVehicleColor] = useState('');
   const [pdfBlob, setPdfBlob] = useState<Blob | null>(null);
-
-  // New state variables for button text and status
   const [generateButtonText, setGenerateButtonText] = useState('Generate Parking Pass');
   const [isGenerating, setIsGenerating] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
 
-  // Function to handle date and time input formatting
+  // Functions
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExpirationDate(e.target.value);
     updateFormattedDate(e.target.value, expirationTime);
@@ -39,7 +38,6 @@ const ParkingPass: React.FC = () => {
     }
   };
 
-  // Automatically set the date and time to one day from now
   const handleAutoSetExpiration = () => {
     const now = new Date();
     const oneDayLater = addDays(now, 1);
@@ -53,15 +51,12 @@ const ParkingPass: React.FC = () => {
     setFormattedExpirationDate(formattedFullDate);
   };
 
-  // Submit handler for the form
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Update button state
     setIsGenerating(true);
     setGenerateButtonText('Generating...');
 
-    // Set inputs to match the schema
     const inputs = [
       {
         'Resident First Name': firstName,
@@ -74,36 +69,28 @@ const ParkingPass: React.FC = () => {
     ];
 
     try {
-      //@ts-ignore
+      // @ts-ignore
       const pdfUint8Array = await generate({ template, inputs });
 
-      // Convert Uint8Array to Blob
       const pdfBlob = new Blob([pdfUint8Array], { type: 'application/pdf' });
+      setPdfBlob(pdfBlob);
 
-      setPdfBlob(pdfBlob); // Store the generated PDF blob
-
-      // Update button text to "Generated!"
       setGenerateButtonText('Generated!');
-
-      // Show the download button
       setShowDownloadButton(true);
 
-      // After 5 seconds, reset the button text and hide the download button
       setTimeout(() => {
         setGenerateButtonText('Generate Parking Pass');
         setIsGenerating(false);
         setShowDownloadButton(false);
-        setPdfBlob(null); // Clear the PDF blob
+        setPdfBlob(null);
       }, 5000);
     } catch (error) {
       console.error('Error generating PDF:', error);
-      // Reset button states in case of error
       setGenerateButtonText('Generate Parking Pass');
       setIsGenerating(false);
     }
   };
 
-  // Download the generated PDF
   const handleDownload = () => {
     if (pdfBlob) {
       const url = URL.createObjectURL(pdfBlob);
@@ -116,11 +103,14 @@ const ParkingPass: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl p-8 bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col items-center justify-center flex-grow p-4 bg-gray-100">
       <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">
-        Parking Pass Generator
+        Campus View Guest Parking Pass
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-xl p-6 space-y-6 bg-white rounded-lg shadow-lg"
+      >
         {/* Resident Information */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* First Name */}
@@ -130,7 +120,8 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="text"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              placeholder="Enter first name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -143,7 +134,8 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="text"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              placeholder="Enter last name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -160,7 +152,7 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="date"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
               value={expirationDate}
               onChange={handleDateChange}
               required
@@ -173,7 +165,7 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="time"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
               value={expirationTime}
               onChange={handleTimeChange}
               required
@@ -206,7 +198,8 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="text"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              placeholder="Enter vehicle make"
               value={vehicleMake}
               onChange={(e) => setVehicleMake(e.target.value)}
               required
@@ -219,7 +212,8 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="text"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              placeholder="Enter vehicle model"
               value={vehicleModel}
               onChange={(e) => setVehicleModel(e.target.value)}
               required
@@ -232,7 +226,8 @@ const ParkingPass: React.FC = () => {
             </label>
             <input
               type="text"
-              className="block w-full p-3 mt-1 border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              className="block w-full p-3 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:ring-black focus:border-black"
+              placeholder="Enter vehicle color"
               value={vehicleColor}
               onChange={(e) => setVehicleColor(e.target.value)}
               required

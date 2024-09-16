@@ -2,8 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom Global Styles */
-body {
-  @apply text-gray-800 bg-gray-100;
-  font-family: 'Inter', sans-serif; /* Ensure you have Inter font installed or adjust accordingly */
-}
