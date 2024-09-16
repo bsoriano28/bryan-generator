@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Guest Parking Permit Generator for Off-Campus Housing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a guest parking permit generator for off-campus housing that uses physical, printed, guest parking temporary permits. It allows you to generate parking passes independently from the official housing system, giving you flexibility and convenience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Easy Form Submission**: Fill out the required fields for your guest's vehicle information, set the expiration date, and download a PDF with the parking permit.
+- **Expiration Date Flexibility**: Unlike the original system that automatically sets the expiration date, this tool allows you to select when the permit expires.
+- **No Limit Notifications**: Some housing systems limit the number of guest parking permits you can generate per month (e.g., 8 passes). This tool allows you to bypass these notifications and limits.
+- **No Abuse Notifications**: Certain systems notify management of permit generation, with the potential for consequences (e.g., vehicle towing for misuse). This tool avoids sending such notifications.
 
-### `npm start`
+## How to Use
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Navigate to the parking permit tab for the permit type you want to create.
+2. Fill out the required form fields with guest and vehicle information.
+3. Set the expiration date and time (you can even set it for a future date!).
+4. Download the generated PDF and print it out for use.
+5. Done! The permit is ready to be printed and displayed on your guest’s vehicle.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Why Use This Tool?
 
-### `npm test`
+Many off-campus housing systems restrict the number of guest parking permits or impose strict monitoring policies. With this generator:
+- You bypass the limits imposed by some housing systems (e.g., 8 guest passes per month).
+- No notifications are sent to management when you generate a guest pass, so you don’t need to worry about being penalized for system abuse.
+- You can adjust the expiration date to suit your needs, allowing for more flexibility when managing guest parking.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Added Benefits
 
-### `npm run build`
+- **Flexible Expiration Dates**: The official system typically sets the expiration date to one day after the permit is generated. With this tool, you can select your expiration date, giving you the flexibility to plan ahead or adjust for specific situations.
+- **Generate Future Permits**: If you know in advance that you will need a guest permit, you can generate a permit for a future date and print it out ahead of time.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tips for Use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Avoid Suspicion**: Do not leave a parking permit on the vehicle for multiple days. Although this tool allows you to extend the expiration date, it’s best to avoid drawing suspicion from management. Real permits typically don’t last more than a day, so try to limit the expiration period to a few hours or a single day.
+- **Plan Ahead**: If you know you will need a guest parking permit for a specific date in the future, generate the pass in advance and print it out. This can be particularly helpful if you won’t have access to a printer on the day you need the pass.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Disclaimer
 
-### `npm run eject`
+This tool is designed for convenience, but please be mindful of any local parking regulations or rules imposed by your housing management. Use it responsibly to avoid penalties or issues with your housing provider.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy Parking! 🚗🅿️
