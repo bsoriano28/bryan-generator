@@ -105,7 +105,7 @@ const ParkingPass: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center flex-grow p-4 bg-gray-100">
       <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">
-        Parking Pass Generator
+        Campus View Guest Parking Pass
       </h2>
       <form
         onSubmit={handleSubmit}
