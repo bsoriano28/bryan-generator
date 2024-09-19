@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bryan-generator/static/css/main.3d5a7c8e.css",
-    "main.js": "/bryan-generator/static/js/main.15b0f230.js",
+    "main.css": "/bryan-generator/static/css/main.579f2e07.css",
+    "main.js": "/bryan-generator/static/js/main.1d0a28f3.js",
     "index.html": "/bryan-generator/index.html",
-    "main.3d5a7c8e.css.map": "/bryan-generator/static/css/main.3d5a7c8e.css.map",
-    "main.15b0f230.js.map": "/bryan-generator/static/js/main.15b0f230.js.map"
+    "main.579f2e07.css.map": "/bryan-generator/static/css/main.579f2e07.css.map",
+    "main.1d0a28f3.js.map": "/bryan-generator/static/js/main.1d0a28f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d5a7c8e.css",
-    "static/js/main.15b0f230.js"
+    "static/css/main.579f2e07.css",
+    "static/js/main.1d0a28f3.js"
   ]
 }
