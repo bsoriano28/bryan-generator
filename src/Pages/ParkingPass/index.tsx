@@ -19,6 +19,21 @@ const ParkingPass: React.FC = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [showDownloadButton, setShowDownloadButton] = useState(false);
 
+  // Prefill button handler
+  const handlePrefillK5 = () => {
+    setFirstName('Lea');
+    setLastName('Louie');
+
+    const oneDayLater = addDays(new Date(), 1);
+    setExpirationDate(format(oneDayLater, 'yyyy-MM-dd'));
+    setExpirationTime(format(oneDayLater, 'HH:mm'));
+    setFormattedExpirationDate(format(oneDayLater, "EEE MMM d yyyy 'at' hh:mm a"));
+
+    setVehicleMake('Kia');
+    setVehicleModel('K5');
+    setVehicleColor('Black');
+  };
+
   // Functions
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExpirationDate(e.target.value);
@@ -39,16 +54,10 @@ const ParkingPass: React.FC = () => {
   };
 
   const handleAutoSetExpiration = () => {
-    const now = new Date();
-    const oneDayLater = addDays(now, 1);
-
-    const formattedDate = format(oneDayLater, 'yyyy-MM-dd');
-    const formattedTime = format(oneDayLater, 'HH:mm');
-    setExpirationDate(formattedDate);
-    setExpirationTime(formattedTime);
-
-    const formattedFullDate = format(oneDayLater, "EEE MMM d yyyy 'at' hh:mm a");
-    setFormattedExpirationDate(formattedFullDate);
+    const oneDayLater = addDays(new Date(), 1);
+    setExpirationDate(format(oneDayLater, 'yyyy-MM-dd'));
+    setExpirationTime(format(oneDayLater, 'HH:mm'));
+    setFormattedExpirationDate(format(oneDayLater, "EEE MMM d yyyy 'at' hh:mm a"));
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -107,6 +116,16 @@ const ParkingPass: React.FC = () => {
       <h2 className="mb-8 text-3xl font-bold text-center text-gray-800">
         Campus View Guest Parking Pass
       </h2>
+
+      {/* Prefill K5 Button */}
+      <button
+        type="button"
+        onClick={handlePrefillK5}
+        className="self-end px-4 py-2 mb-4 text-white bg-black rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+      >
+        Prefill K5
+      </button>
+
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-xl p-6 space-y-6 bg-white rounded-lg shadow-lg"
